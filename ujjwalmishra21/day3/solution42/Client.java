@@ -1,9 +1,7 @@
 package com.hsbc.day3.solution42;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 import com.hsbc.day3.solution42.dao.CourseDAO;
 import com.hsbc.day3.solution42.dao.EmployeeDAO;
@@ -38,6 +36,7 @@ public class Client {
 		CourseDAO courseDAO = new CourseDAOImpl();
 		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		
+		// Adding courses
 		for (Course course: courses)
 			try {
 				courseDAO.addCourse(course);
@@ -46,6 +45,7 @@ public class Client {
 				e.printStackTrace();
 			}
 		
+		//Adding employees
 		for(Employee employee: employees)
 			try {
 				employeeDAO.addEmployee(employee);

@@ -24,7 +24,15 @@ public class CourseDAOImpl implements CourseDAO{
 	public Collection<Course> getCourseDetails() {
 		return courses.values();
 	}
-
+	/*
+	 * (non-Javadoc)
+	 * @see com.hsbc.day3.solution42.dao.CourseDAO#registerEmployee(int, com.hsbc.day3.solution42.model.Employee)
+	 * Steps followed for registration:
+	 * 1. Course object is obtained using courseId
+	 * 2. Employees list for the course is obtained from course object
+	 * 3. New employee is added to the list
+	 * 4. The list of employee is stored on the course object
+	 */
 	@Override
 	public Employee registerEmployee(int courseId, Employee employee) throws CourseNotFound, EmployeeAlreadyExistsInCourse {
 		Course course = courses.get(courseId);
@@ -41,6 +49,15 @@ public class CourseDAOImpl implements CourseDAO{
 		course.setEmployees(employees);
 		return employee;
 	}
+	/*
+	 * (non-Javadoc)
+	 * @see com.hsbc.day3.solution42.dao.CourseDAO#deRegisterEmployee(int, com.hsbc.day3.solution42.model.Employee)
+	 * Steps followed for deRegisteration:
+	 * 1. Course object is obtained using courseId
+	 * 2. Employees list for the course is obtained from course object
+	 * 3. Employee is removed from the list
+	 * 4. The list of employee is stored on the course object
+	 */
 
 	@Override
 	public Employee deRegisterEmployee(int courseId, Employee employee) throws CourseNotFound, EmployeeNotFound, NoEmployeeInCourse {
@@ -60,7 +77,15 @@ public class CourseDAOImpl implements CourseDAO{
 		course.setEmployees(employees);
 		return employee;
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.hsbc.day3.solution42.dao.CourseDAO#getEmployees(int)
+	 * Steps followed to obtain employees for a course:
+	 * 1. Course Id is used to get the course object
+	 * 2. Employee id list is obtaied from course object and is returned
+	 * 
+	 */
 	@Override
 	public Collection<Integer> getEmployees(int courseId) throws CourseNotFound, NoEmployeeInCourse {
 		Course course = courses.get(courseId);
@@ -73,7 +98,13 @@ public class CourseDAOImpl implements CourseDAO{
 		}
 		return new ArrayList<Integer>(employees);
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.hsbc.day3.solution42.dao.CourseDAO#addCourse(com.hsbc.day3.solution42.model.Course)
+	 * To add a course the course object is added to hashMap of courses
+	 * if not course with same id exists else exception
+	 */
 	@Override
 	public Course addCourse(Course course) throws CourseIdExists{
 		if(courses.containsKey(course.getCourseId())) {
