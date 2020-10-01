@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<style>
+    .outer-div{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .add-edit-form{
+        
+        border: 1px solid black;
+        width: 100%;
+        padding: 1%;
+
+    }
+    .delete-form{
+        margin-top: 20px;
+        border: 1px solid black;
+        width: 100%;
+        padding: 1%;
+    }
+    .heading{
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 2px dotted black;
+        padding: 1%;
+        font-size: 23px;
+    }
+    button{
+        margin-top: 5px;
+    }
+   
+  
+</style>
+<body>
+     <div class="outer-div">
+     	<div class="navbar">
+            <div class="navbar-element">
+                <a href="./GetProducts">Get Products</a>
+            </div>
+            
+        </div>
+        <div class="add-edit-form">
+            <div class="heading">
+                Add / Edit
+            </div>
+            <form action="./Products" method="GET">
+                <table>
+                    <tr>
+                        <td>Product ID</td>
+                        <td><input type="number"  name="productId"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Name</td>
+                        <td><input type="text"  name="productName"></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td><input type="text"  name="category"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="number"  name="price"></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td><input type="number"  name="quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>ROI</td>
+                        <td><input type="number"  name="roi"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit">Submit</button></td>
+                      
+                    </tr>
+                </table>
+        
+            </form>
+        
+        </div>
+        <div class="delete-form">
+            <div class="heading">
+                Delete Product
+            </div>
+            <table>
+                <form action="./Remove" method="GET">
+                    <tr>
+                        <td>Product ID</td>
+                        <td><input type="number"  name="productId"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit">Submit</button></td>
+                    
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+   </body>
+</html>
